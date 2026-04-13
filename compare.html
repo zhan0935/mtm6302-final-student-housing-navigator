@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compare Residences | Lotus Hearth</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="./index.html" class="logo">Lotus Hearth</a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="./index.html">Home</a>
+        <a href="./compare.html">Compare</a>
+        <a href="./detail.html">Detail</a>
+        <a href="./profile.html">Profile</a>
+      </nav>
+
+      <div class="header-actions">
+        <form class="header-search" id="headerSearchForm" role="search">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input
+    type="search"
+    id="headerSearchInput"
+    placeholder="Search residence..."
+    aria-label="Search residence"
+  />
+</form>
+
+        <button class="icon-btn" id="headerFavoritesBtn" aria-label="Favorites">
+  <i class="fa-regular fa-heart"></i>
+</button>
+
+<button class="icon-btn" id="headerNotificationsBtn" aria-label="Notifications">
+  <i class="fa-regular fa-bell"></i>
+</button>
+
+        <a href="./profile.html" class="avatar-link" aria-label="Profile">
+          <img
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
+            alt="User profile"
+          />
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="compare-page">
+    <section class="compare-hero">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Smart student choice</p>
+            <h2>Compare residences side by side</h2>
+            <p>
+              Review pricing, commute, student-friendly filters, and amenities
+              before making your decision.
+            </p>
+          </div>
+
+          <button class="secondary-btn" id="clearCompareBtn">
+            Clear Compare
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="compare-content">
+      <div class="container">
+        <div id="compareEmptyState" class="compare-empty hidden">
+          <div class="detail-info-card compare-empty-card">
+            <h2>No residences in compare list</h2>
+            <p>
+              Go back to the home page or residence detail page and add up to
+              2 residences to compare.
+            </p>
+            <a href="./index.html" class="primary-btn inline-btn">Browse Residences</a>
+          </div>
+        </div>
+
+        <div id="compareTableWrapper">
+          <div class="compare-table" id="compareTable">
+            <!-- compare content -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/compare.js"></script>
+
+  <script>
+    const navLinks = document.querySelectorAll("#mainNav a");
+    const currentPath = window.location.pathname.split("/").pop() || "index.html";
+
+    navLinks.forEach((link) => {
+      const linkPath = link.getAttribute("href").replace("./", "");
+      if (linkPath === currentPath) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mainNav = document.getElementById("mainNav");
+    const mobileBackdrop = document.getElementById("mobileBackdrop");
+
+    function closeMobileMenu() {
+      mainNav.classList.remove("open");
+      mobileBackdrop.classList.remove("show");
+      mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+
+    function openMobileMenu() {
+      mainNav.classList.add("open");
+      mobileBackdrop.classList.add("show");
+      mobileMenuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    }
+
+    mobileMenuBtn.addEventListener("click", function () {
+      if (mainNav.classList.contains("open")) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    mobileBackdrop.addEventListener("click", closeMobileMenu);
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", closeMobileMenu);
+    });
+
+    const siteHeader = document.getElementById("siteHeader");
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener("scroll", function () {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 12) {
+        siteHeader.classList.add("header-scrolled");
+      } else {
+        siteHeader.classList.remove("header-scrolled");
+      }
+
+      if (window.innerWidth > 900) {
+        if (currentScrollY > lastScrollY && currentScrollY > 120) {
+          siteHeader.classList.add("header-hidden");
+        } else {
+          siteHeader.classList.remove("header-hidden");
+        }
+      } else {
+        siteHeader.classList.remove("header-hidden");
+      }
+
+      lastScrollY = currentScrollY;
+    });
+  </script>
+
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="./index.html" class="logo footer-logo">Lotus Hearth</a>
+        <p>
+          A student housing navigator designed to simplify off-campus rental
+          discovery.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="./index.html">Home</a>
+        <a href="./detail.html">Details</a>
+        <a href="./compare.html">Compare</a>
+        <a href="./profile.html">Dashboard</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Support</h4>
+        <a href="#">Safety Standards</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Concierge</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>College Areas</h4>
+        <a href="#">Ottawa</a>
+        <a href="#">Toronto</a>
+        <a href="#">Montreal</a>
+        <a href="#">Vancouver</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
