@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Residence Detail | Lotus Hearth</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="./css/style.css" />
+
+  
+</head>
+
+<body>
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="./index.html" class="logo">Lotus Hearth</a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="./index.html">Home</a>
+        <a href="./compare.html">Compare</a>
+        <a href="./detail.html">Detail</a>
+        <a href="./profile.html">Profile</a>
+      </nav>
+
+      <div class="header-actions">
+        <form class="header-search" id="headerSearchForm" role="search">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input
+    type="search"
+    id="headerSearchInput"
+    placeholder="Search residence..."
+    aria-label="Search residence"
+  />
+</form>
+
+        <button class="icon-btn" id="headerFavoritesBtn" aria-label="Favorites">
+  <i class="fa-regular fa-heart"></i>
+</button>
+
+<button class="icon-btn" id="headerNotificationsBtn" aria-label="Notifications">
+  <i class="fa-regular fa-bell"></i>
+</button>
+
+        <a href="./profile.html" class="avatar-link" aria-label="Profile">
+          <img
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
+            alt="User profile"
+          />
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="detail-page">
+    <section class="detail-hero-section">
+      <div class="container detail-grid">
+        <div class="detail-gallery-card">
+          <div class="detail-main-image">
+            <img id="detailMainImage" src="" alt="Residence image" />
+          </div>
+
+          <div class="detail-thumbnails" id="detailThumbnails">
+            <!-- thumbnails -->
+          </div>
+        </div>
+
+        <div class="detail-title-card">
+          <div class="detail-title-top">
+            <div>
+              <p class="section-label">Residence detail</p>
+              <h1 id="detailTitle">Residence Name</h1>
+              <p class="detail-subtitle" id="detailSubtitle">Location • Distance</p>
+            </div>
+            <span class="badge badge-pink" id="detailVerifiedBadge">Verified</span>
+          </div>
+
+          <div class="detail-price-row">
+            <p class="detail-price" id="detailPrice">£0/mo</p>
+            <div class="detail-rating">
+              <i class="fa-solid fa-star"></i>
+              <span id="detailRating">4.8</span>
+            </div>
+          </div>
+
+          <div class="detail-meta-grid">
+            <div class="detail-meta-item">
+              <span>School</span>
+              <strong id="detailSchool">Algonquin College</strong>
+            </div>
+            <div class="detail-meta-item">
+              <span>Distance</span>
+              <strong id="detailDistance">12 min walk</strong>
+            </div>
+            <div class="detail-meta-item">
+              <span>Deposit</span>
+              <strong id="detailDeposit">£0</strong>
+            </div>
+            <div class="detail-meta-item">
+              <span>Lease</span>
+              <strong id="detailLease">12 months</strong>
+            </div>
+            <div class="detail-meta-item">
+              <span>Room Type</span>
+              <strong id="detailRoomType">Studio</strong>
+            </div>
+            <div class="detail-meta-item">
+              <span>Availability</span>
+              <strong id="detailAvailability">Available now</strong>
+            </div>
+            <div class="detail-meta-item detail-meta-wide">
+              <span>Landlord</span>
+              <strong id="detailLandlord">Landlord Name</strong>
+            </div>
+          </div>
+
+          <div class="listing-tags detail-tags" id="detailTags">
+            <!-- tags -->
+          </div>
+
+          <div class="detail-action-row">
+            <button class="primary-btn" id="detailFavoriteBtn">
+              <i class="fa-regular fa-heart"></i> Save
+            </button>
+            <button class="secondary-btn" id="detailCompareBtn">
+              Compare
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-content-section">
+      <div class="container detail-content-grid">
+        <div class="detail-left-column">
+          <article class="detail-info-card">
+            <h2>About this place</h2>
+            <p id="detailDescription">
+              Residence description goes here.
+            </p>
+          </article>
+
+          <article class="detail-info-card">
+            <h2>Key features</h2>
+            <ul class="detail-list" id="detailFeaturesList">
+              <!-- features -->
+            </ul>
+          </article>
+
+          <article class="detail-info-card">
+            <h2>Amenities</h2>
+            <div class="amenities-grid" id="detailAmenities">
+              <!-- amenities -->
+            </div>
+          </article>
+
+          <article class="detail-info-card">
+            <h2>Student reviews</h2>
+
+            <div class="reviews-list" id="reviewsList">
+              <!-- reviews -->
+            </div>
+
+            <form class="review-form" id="reviewForm">
+              <h3>Add your review</h3>
+
+              <div class="review-form-grid">
+                <div class="field-group">
+                  <label for="reviewName">Your name</label>
+                  <div class="input-wrap">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" id="reviewName" placeholder="Your name" />
+                  </div>
+                </div>
+
+                <div class="field-group">
+                  <label for="reviewRating">Rating</label>
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-star"></i>
+                    <select id="reviewRating">
+                      <option value="5">5 - Excellent</option>
+                      <option value="4">4 - Good</option>
+                      <option value="3">3 - Okay</option>
+                      <option value="2">2 - Poor</option>
+                      <option value="1">1 - Very poor</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label for="reviewTag">Review type</label>
+                <div class="input-wrap">
+                  <i class="fa-regular fa-flag"></i>
+                  <select id="reviewTag">
+                    <option value="recommendation">Recommendation</option>
+                    <option value="avoid-risk">Avoid Risk</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label for="reviewText">Comment</label>
+                <div class="textarea-wrap">
+                  <textarea
+                    id="reviewText"
+                    rows="5"
+                    placeholder="Share your student experience with this place..."
+                  ></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="primary-btn">Submit Review</button>
+            </form>
+          </article>
+        </div>
+
+        <div class="detail-right-column">
+          <article class="detail-info-card">
+            <h2>Student score</h2>
+            <div class="score-overview">
+              <div class="score-badge" id="scoreOverall">A+</div>
+              <div class="score-lines">
+                <div class="score-line">
+                  <span>Safety</span>
+                  <strong id="scoreSafety">90</strong>
+                </div>
+                <div class="score-line">
+                  <span>Affordability</span>
+                  <strong id="scoreAffordability">82</strong>
+                </div>
+                <div class="score-line">
+                  <span>Student Experience</span>
+                  <strong id="scoreExperience">88</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="detail-info-card">
+            <h2>Nearby essentials</h2>
+            <ul class="detail-list" id="detailNearbyList">
+              <!-- nearby -->
+            </ul>
+          </article>
+
+          <article class="detail-info-card">
+            <h2>Quick commute</h2>
+            <div class="commute-grid">
+              <div class="commute-box">
+                <span>Walk</span>
+                <strong id="commuteWalk">12 min</strong>
+              </div>
+              <div class="commute-box">
+                <span>Bus</span>
+                <strong id="commuteBus">6 min</strong>
+              </div>
+              <div class="commute-box">
+                <span>Bike</span>
+                <strong id="commuteBike">5 min</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="detail-info-card">
+            <h2>Need a comparison?</h2>
+            <p>
+              Save this residence to your compare list and review price,
+              distance, and student-friendly features side by side.
+            </p>
+            <a href="./compare.html" class="secondary-btn inline-btn">Go to Compare</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/detail.js"></script>
+
+  <script>
+    const navLinks = document.querySelectorAll("#mainNav a");
+    const currentPath = window.location.pathname.split("/").pop() || "index.html";
+
+    navLinks.forEach((link) => {
+      const linkPath = link.getAttribute("href").replace("./", "");
+      if (linkPath === currentPath) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mainNav = document.getElementById("mainNav");
+    const mobileBackdrop = document.getElementById("mobileBackdrop");
+
+    function closeMobileMenu() {
+      mainNav.classList.remove("open");
+      mobileBackdrop.classList.remove("show");
+      mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+
+    function openMobileMenu() {
+      mainNav.classList.add("open");
+      mobileBackdrop.classList.add("show");
+      mobileMenuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    }
+
+    mobileMenuBtn.addEventListener("click", function () {
+      if (mainNav.classList.contains("open")) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    mobileBackdrop.addEventListener("click", closeMobileMenu);
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", closeMobileMenu);
+    });
+
+    const siteHeader = document.getElementById("siteHeader");
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener("scroll", function () {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 12) {
+        siteHeader.classList.add("header-scrolled");
+      } else {
+        siteHeader.classList.remove("header-scrolled");
+      }
+
+      if (window.innerWidth > 900) {
+        if (currentScrollY > lastScrollY && currentScrollY > 120) {
+          siteHeader.classList.add("header-hidden");
+        } else {
+          siteHeader.classList.remove("header-hidden");
+        }
+      } else {
+        siteHeader.classList.remove("header-hidden");
+      }
+
+      lastScrollY = currentScrollY;
+    });
+  </script>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="./index.html" class="logo footer-logo">Lotus Hearth</a>
+        <p>
+          A student housing navigator designed to simplify off-campus rental
+          discovery.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="./index.html">Home</a>
+        <a href="./detail.html">Details</a>
+        <a href="./compare.html">Compare</a>
+        <a href="./profile.html">Dashboard</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Support</h4>
+        <a href="#">Safety Standards</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Concierge</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>College Areas</h4>
+        <a href="#">Ottawa</a>
+        <a href="#">Toronto</a>
+        <a href="#">Montreal</a>
+        <a href="#">Vancouver</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

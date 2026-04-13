@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard | Lotus Hearth</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="./index.html" class="logo">Lotus Hearth</a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="./index.html">Home</a>
+        <a href="./compare.html">Compare</a>
+        <a href="./detail.html">Detail</a>
+        <a href="./profile.html">Profile</a>
+      </nav>
+
+      <div class="header-actions">
+        <form class="header-search" id="headerSearchForm" role="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="search"
+            id="headerSearchInput"
+            placeholder="Search residence..."
+            aria-label="Search residence"
+          />
+        </form>
+
+        <button class="icon-btn" id="headerFavoritesBtn" aria-label="Favorites">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+
+        <button class="icon-btn" id="headerNotificationsBtn" aria-label="Notifications">
+          <i class="fa-regular fa-bell"></i>
+        </button>
+
+        <a href="./profile.html" class="avatar-link" aria-label="Profile">
+          <img
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
+            alt="User profile"
+          />
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="profile-page">
+    <section class="profile-hero">
+      <div class="container">
+        <h1>Student Dashboard</h1>
+        <p>Manage your saved housing, preferences, and student-friendly search settings.</p>
+      </div>
+    </section>
+
+    <!-- =========================
+         PROFILE SETTINGS
+    ========================= -->
+    <section class="profile-settings-section">
+      <div class="container">
+        <div class="profile-settings-grid">
+
+          <!-- Profile -->
+          <article class="settings-card profile-card">
+            <div class="profile-card-top">
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80"
+                class="profile-avatar-large"
+                alt="Profile avatar"
+              />
+              <div>
+                <p class="section-label">My Profile</p>
+                <h2>Bettie</h2>
+                <p class="profile-subtext">Algonquin College student</p>
+              </div>
+            </div>
+
+            <div class="settings-list">
+              <div class="settings-row">
+                <span>School</span>
+                <strong>Algonquin College</strong>
+              </div>
+              <div class="settings-row">
+                <span>Preferred Area</span>
+                <strong>Ottawa</strong>
+              </div>
+              <div class="settings-row">
+                <span>Budget</span>
+                <strong>£1200 – £1500</strong>
+              </div>
+              <div class="settings-row">
+                <span>Move-in Preference</span>
+                <strong>Next Month</strong>
+              </div>
+              <div class="settings-row">
+                <span>Preferred Room Type</span>
+                <strong>Studio / 1 Bedroom</strong>
+              </div>
+            </div>
+
+            <button class="secondary-btn" id="editProfileBtn">Edit Profile</button>
+          </article>
+
+          <!-- Account Summary -->
+          <article class="settings-card">
+            <p class="section-label">Overview</p>
+            <h3>Account Summary</h3>
+
+            <div class="settings-list">
+              <div class="settings-row">
+                <span>Saved residences</span>
+                <strong id="summaryFavorites">0</strong>
+              </div>
+              <div class="settings-row">
+                <span>Compare list</span>
+                <strong id="summaryCompare">0</strong>
+              </div>
+              <div class="settings-row">
+                <span>Recently viewed</span>
+                <strong id="summaryRecent">0</strong>
+              </div>
+              <div class="settings-row">
+                <span>Reviews added</span>
+                <strong id="summaryReviews">0</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- Preferences -->
+          <article class="settings-card">
+            <p class="section-label">Preferences</p>
+            <h3>Housing Preferences</h3>
+
+            <div class="preference-tags">
+              <span>Furnished</span>
+              <span>Utilities Included</span>
+              <span>Pets Allowed</span>
+              <span>Within 5 km</span>
+              <span>Quiet Area</span>
+              <span>Near Transit</span>
+            </div>
+
+            <div class="settings-list">
+              <div class="settings-row">
+                <span>Budget Limit</span>
+                <strong>£1500 / month</strong>
+              </div>
+              <div class="settings-row">
+                <span>Distance to Campus</span>
+                <strong>Within 5 km</strong>
+              </div>
+              <div class="settings-row">
+                <span>Lease Preference</span>
+                <strong>8–12 months</strong>
+              </div>
+              <div class="settings-row">
+                <span>Student Priority</span>
+                <strong>Safe and study-friendly</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- Housing Goals -->
+          <article class="settings-card">
+            <p class="section-label">Goals</p>
+            <h3>Housing Goals</h3>
+
+            <div class="preference-tags">
+              <span>Study-friendly space</span>
+              <span>Safe neighborhood</span>
+              <span>Grocery nearby</span>
+              <span>Good transit access</span>
+              <span>Verified landlord</span>
+              <span>Affordable monthly rent</span>
+            </div>
+          </article>
+
+          <!-- Notifications -->
+          <article class="settings-card">
+            <p class="section-label">Notifications</p>
+            <h3>Alert Preferences</h3>
+
+            <div class="settings-list">
+              <div class="settings-row">
+                <span>New listing alerts</span>
+                <strong>On</strong>
+              </div>
+              <div class="settings-row">
+                <span>Saved residence updates</span>
+                <strong>On</strong>
+              </div>
+              <div class="settings-row">
+                <span>Review reminders</span>
+                <strong>Off</strong>
+              </div>
+              <div class="settings-row">
+                <span>Compare summary alerts</span>
+                <strong>On</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- Quick Actions -->
+          <article class="settings-card">
+            <p class="section-label">Quick Actions</p>
+            <h3>Manage Dashboard</h3>
+
+            <div class="quick-action-buttons">
+              <button class="secondary-btn" id="clearFavoritesBtn">Clear Favorites</button>
+              <button class="secondary-btn" id="clearCompareDashboardBtn">Clear Compare</button>
+              <button class="secondary-btn" id="clearRecentBtn">Clear Recently Viewed</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2>Favorites</h2>
+      <div id="favoritesList"></div>
+
+      <h2>Compare</h2>
+      <div id="compareMiniList"></div>
+
+      <h2>Recently Viewed</h2>
+      <div id="recentList"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="./index.html" class="logo footer-logo">Lotus Hearth</a>
+        <p>
+          A student housing navigator designed to simplify off-campus rental discovery.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="./index.html">Home</a>
+        <a href="./detail.html">Details</a>
+        <a href="./compare.html">Compare</a>
+        <a href="./profile.html">Dashboard</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Support</h4>
+        <a href="#">Safety Standards</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Concierge</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>College Areas</h4>
+        <a href="#">Ottawa</a>
+        <a href="#">Toronto</a>
+        <a href="#">Montreal</a>
+        <a href="#">Vancouver</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/profile.js"></script>
+
+  <script>
+    // active nav
+    const navLinks = document.querySelectorAll("#mainNav a");
+    const currentPath = window.location.pathname.split("/").pop() || "index.html";
+
+    navLinks.forEach(link => {
+      const path = link.getAttribute("href").replace("./", "");
+      if (path === currentPath) {
+        link.classList.add("active");
+      }
+    });
+
+    // edit profile button
+    document.addEventListener("DOMContentLoaded", function () {
+      const editBtn = document.querySelector("#editProfileBtn");
+
+      if (editBtn) {
+        editBtn.addEventListener("click", function () {
+          if (typeof showToast === "function") {
+            showToast("Edit profile coming soon.");
+          }
+        });
+      }
+
+      // summary values
+      if (typeof getFavorites === "function") {
+        const favorites = getFavorites();
+        const compare = typeof getCompare === "function" ? getCompare() : [];
+        const recent = typeof getRecentlyViewed === "function" ? getRecentlyViewed() : [];
+        const reviews = typeof getStoredReviews === "function" ? getStoredReviews() : [];
+
+        const summaryFavorites = document.querySelector("#summaryFavorites");
+        const summaryCompare = document.querySelector("#summaryCompare");
+        const summaryRecent = document.querySelector("#summaryRecent");
+        const summaryReviews = document.querySelector("#summaryReviews");
+
+        if (summaryFavorites) summaryFavorites.textContent = favorites.length;
+        if (summaryCompare) summaryCompare.textContent = compare.length;
+        if (summaryRecent) summaryRecent.textContent = recent.length;
+        if (summaryReviews) summaryReviews.textContent = reviews.length;
+      }
+    });
+
+    // mobile menu
+    const menuBtn = document.getElementById("mobileMenuBtn");
+    const nav = document.getElementById("mainNav");
+    const backdrop = document.getElementById("mobileBackdrop");
+
+    if (menuBtn && nav && backdrop) {
+      menuBtn.addEventListener("click", () => {
+        nav.classList.toggle("open");
+        backdrop.classList.toggle("show");
+      });
+
+      backdrop.addEventListener("click", () => {
+        nav.classList.remove("open");
+        backdrop.classList.remove("show");
+      });
+    }
+  </script>
+</body>
+</html>
